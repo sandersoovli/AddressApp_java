@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8"
+            fx:controller="ch.makery.address.view.PersonEditDialogController">
+    <children>
+        <GridPane hgap="10" vgap="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+            <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Street:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="streetField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Postal Code:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="postalCodeField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="City:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="cityField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Birthday:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="birthdayField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <Label text="(dd.mm.yyyy)" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+            <HBox spacing="10" GridPane.rowIndex="6" GridPane.columnIndex="1" alignment="center_right">
+                <Button text="OK" fx:id="okButton" onAction="#handleOk"/>
+                <Button text="Cancel" fx:id="cancelButton" onAction="#handleCancel"/>
+            </HBox>
+        </GridPane>
+    </children>
+</AnchorPane>

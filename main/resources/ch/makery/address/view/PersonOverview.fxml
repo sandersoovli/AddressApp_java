@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/fxml" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.PersonOverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.PersonOverviewController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="49.0" layoutY="42.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -61,7 +61,11 @@
                   </GridPane>
                   <Button layoutX="261.0" layoutY="259.0" mnemonicParsing="false" text="New" />
                   <Button layoutX="308.0" layoutY="259.0" mnemonicParsing="false" text="Edit" />
-                  <Button layoutX="355.0" layoutY="259.0" mnemonicParsing="false" text="Delete" />
+                  <Button layoutX="355.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
+                   <Button layoutX="261.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleNewPerson" text="New" />
+                   <Button layoutX="308.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleEditPerson" text="Edit" />
+                   <Button layoutX="355.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
+
                </children>
             </AnchorPane>
         </items>
