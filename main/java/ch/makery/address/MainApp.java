@@ -96,9 +96,14 @@ public class MainApp extends Application {
             AnchorPane page = loader.load();
 
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Person");
+            if (person.getFirstName() == null || person.getFirstName().isEmpty()) {
+                dialogStage.setTitle("Add New Person");
+            } else {
+                dialogStage.setTitle("Edit Person");
+            }
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
+
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
