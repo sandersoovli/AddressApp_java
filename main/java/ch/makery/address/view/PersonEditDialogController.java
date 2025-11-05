@@ -22,6 +22,10 @@ public class PersonEditDialogController {
     private TextField cityField;
     @FXML
     private TextField birthdayField;
+    @FXML
+    private TextField emailField;
+    @FXML
+    private TextField phoneField;
 
     private Stage dialogStage;
     private Person person;
@@ -44,6 +48,8 @@ public class PersonEditDialogController {
         cityField.setText(person.getCity());
         birthdayField.setText(DateUtil.format(person.getBirthday()));
         birthdayField.setPromptText("dd.mm.yyyy");
+        emailField.setText(person.getEmail());
+        phoneField.setText(person.getPhone());
     }
 
     public boolean isOkClicked() {
@@ -59,6 +65,8 @@ public class PersonEditDialogController {
             person.setPostalCode(Integer.parseInt(postalCodeField.getText()));
             person.setCity(cityField.getText());
             person.setBirthday(DateUtil.parse(birthdayField.getText()));
+            person.setEmail(emailField.getText());
+            person.setPhone(phoneField.getText());
 
             okClicked = true;
             dialogStage.close();

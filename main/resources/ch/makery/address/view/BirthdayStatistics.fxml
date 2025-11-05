@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.BirthdayStatisticsController">
+    <children>
+        <VBox spacing="20.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+
+            <!-- Birthday Chart -->
+            <BarChart fx:id="barChart" prefHeight="200.0" prefWidth="700.0" title="Birthday Statistics">
+                <xAxis>
+                    <CategoryAxis fx:id="xAxis" side="BOTTOM"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="birthdayYAxis" side="LEFT"/>
+                </yAxis>
+            </BarChart>
+
+            <!-- City Chart -->
+            <BarChart fx:id="cityChart" prefHeight="200.0" prefWidth="700.0" title="City Statistics">
+                <xAxis>
+                    <CategoryAxis fx:id="cityXAxis" side="BOTTOM"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="cityYAxis" side="LEFT"/>
+                </yAxis>
+            </BarChart>
+
+            <!-- Phone Chart -->
+            <BarChart fx:id="phoneChart" prefHeight="200.0" prefWidth="700.0" title="Phone Number Statistics">
+                <xAxis>
+                    <CategoryAxis fx:id="phoneXAxis" side="BOTTOM"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="phoneYAxis"/>
+                </yAxis>
+            </BarChart>
+
+        </VBox>
+    </children>
+</AnchorPane>

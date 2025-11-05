@@ -17,6 +17,10 @@ public class PersonOverviewController {
     private TableColumn<Person, String> firstNameColumn;
     @FXML
     private TableColumn<Person, String> lastNameColumn;
+    @FXML
+    private TableColumn<Person, String> emailColumn;
+    @FXML
+    private TableColumn<Person, String> phoneColumn;
 
     @FXML
     private Label firstNameLabel;
@@ -30,6 +34,10 @@ public class PersonOverviewController {
     private Label cityLabel;
     @FXML
     private Label birthdayLabel;
+    @FXML
+    private Label emailLabel;
+    @FXML
+    private Label phoneLabel;
 
     /**
      * The constructor.
@@ -46,9 +54,12 @@ public class PersonOverviewController {
             streetLabel.setText(person.getStreet());
             postalCodeLabel.setText(Integer.toString(person.getPostalCode()));
             cityLabel.setText(person.getCity());
+            // Kui tahad ka sünnipäeva näidata
+            birthdayLabel.setText(person.getBirthday() != null ? person.getBirthday().toString() : "");
 
-            // TODO: We need a way to convert the birthday into a String!
-            // birthdayLabel.setText(...);
+            // SIIN LISAME EMAIL JA PHONE
+            emailLabel.setText(person.getEmail());
+            phoneLabel.setText(person.getPhone());
         } else {
             // Person is null, remove all the text.
             firstNameLabel.setText("");
@@ -57,8 +68,13 @@ public class PersonOverviewController {
             postalCodeLabel.setText("");
             cityLabel.setText("");
             birthdayLabel.setText("");
+
+            // Kustuta ka email ja phone
+            emailLabel.setText("");
+            phoneLabel.setText("");
         }
     }
+
 
     /**
      * Initializes the controller class. This method is automatically called
@@ -69,6 +85,10 @@ public class PersonOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+        emailColumn.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleStringProperty(cellData.getValue().getEmail()));
+        phoneColumn.setCellValueFactory(cellData ->
+                new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPhone()));
 
         // Clear person details.
         showPersonDetails(null);
@@ -77,6 +97,7 @@ public class PersonOverviewController {
         personTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showPersonDetails(newValue));
     }
+
 
 
     @FXML

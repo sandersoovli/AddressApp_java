@@ -34,7 +34,15 @@
             <TextField fx:id="birthdayField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="(dd.mm.yyyy)" GridPane.columnIndex="2" GridPane.rowIndex="5" />
 
-            <HBox alignment="center_right" spacing="10" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <!-- NEW: Email -->
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+            <!-- NEW: Phone -->
+            <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <HBox alignment="center_right" spacing="10" stylesheets="@DarkTheme.css" GridPane.columnIndex="1" GridPane.rowIndex="8">
                 <Button fx:id="okButton" defaultButton="true" onAction="#handleOk" text="OK" />
                 <Button fx:id="cancelButton" onAction="#handleCancel" text="Cancel" />
             </HBox>
