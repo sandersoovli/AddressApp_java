@@ -68,12 +68,22 @@
                                 <Label text="Phone" GridPane.rowIndex="7" />
                                 <Label fx:id="phoneLabel" styleClass="label-bright" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                             </children>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
                         </GridPane>
 
                         <!-- Nupud -->
-                        <Button text="New" onAction="#handleNewPerson" AnchorPane.rightAnchor="200.0" AnchorPane.bottomAnchor="10.0" />
-                        <Button text="Edit" onAction="#handleEditPerson" AnchorPane.rightAnchor="110.0" AnchorPane.bottomAnchor="10.0" />
-                        <Button text="Delete" onAction="#handleDeletePerson" AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="10.0" />
+                        <Button onAction="#handleNewPerson" text="New" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="200.0" />
+                        <Button layoutX="284.0" layoutY="260.0" onAction="#handleEditPerson" text="Edit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="119.0" />
+                        <Button onAction="#handleDeletePerson" text="Delete" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
                     </children>
                 </AnchorPane>
             </items>

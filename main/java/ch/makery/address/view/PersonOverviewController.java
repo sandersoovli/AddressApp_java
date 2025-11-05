@@ -2,6 +2,7 @@ package ch.makery.address.view;
 
 import ch.makery.address.MainApp;
 import ch.makery.address.model.Person;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -46,6 +47,15 @@ public class PersonOverviewController {
     public PersonOverviewController() {
     }
 
+
+    private ObservableList<Person> personData;
+
+    // See meetod võimaldab MainApp-il andmed saata
+    public void setPersonData(ObservableList<Person> personData) {
+        this.personData = personData;
+        // Pane andmed tabelisse
+        personTable.setItems(personData);
+    }
     private void showPersonDetails(Person person) {
         if (person != null) {
             // Fill the labels with info from the person object.
@@ -122,7 +132,7 @@ public class PersonOverviewController {
         Person tempPerson = new Person();
         boolean okClicked = mainApp.showPersonEditDialog(tempPerson);
         if (okClicked) {
-            mainApp.getPersonData().add(tempPerson);
+            mainApp.getPersonRepository().getPersons().add(tempPerson);
         }
     }
 
@@ -154,6 +164,6 @@ public class PersonOverviewController {
         this.mainApp = mainApp;
 
         // Add observable list data to the table
-        personTable.setItems(mainApp.getPersonData());
+        personTable.setItems(mainApp.getPersonRepository().getPersons());
     }
 }
