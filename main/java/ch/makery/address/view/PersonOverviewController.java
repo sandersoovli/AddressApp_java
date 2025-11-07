@@ -95,10 +95,9 @@ public class PersonOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-        emailColumn.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleStringProperty(cellData.getValue().getEmail()));
-        phoneColumn.setCellValueFactory(cellData ->
-                new javafx.beans.property.SimpleStringProperty(cellData.getValue().getPhone()));
+
+        emailColumn.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
+        phoneColumn.setCellValueFactory(cellData -> cellData.getValue().phoneProperty());
 
         // Clear person details.
         showPersonDetails(null);
